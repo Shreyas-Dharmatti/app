@@ -47,7 +47,7 @@ if option == "Sentence Generation":
         input_text = " ".join(input_text.split())  # Truncate to the first 5 words
     input_words = input_text.split()[:block_size]
     input_words = [''] * (block_size - len(input_words)) + input_words
-    num_sen = st.number_input("Number of Sentences to Generate", min_value=1, max_value=100000, step=1, value=10)
+    num_sen = st.number_input("Number of Sentences to Generate", min_value=1, max_value=25, step=1, value=2)
 
     # Map the activation function choice to PyTorch activation functions
     activation_dict = {
@@ -83,7 +83,7 @@ if option == "Sentence Generation":
     def predict_next_sentences(model, stoi, itos, input_words, device, num_sentences=1):
         model.eval()  # Set model to evaluation mode
         import random
-        random.seed(42)
+        #random.seed(42)
         context = [stoi.get(word, random.randint(500, 20000)) for word in input_words[-block_size:]]
         #context = [stoi.get(word, 93) for word in input_words[-block_size:]]
         sentence = input_words.copy()
