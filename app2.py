@@ -1,5 +1,5 @@
 import streamlit as st
-pip install torch
+!pip install torch
 #pip install 
 st.title("Text Prediction Model")
 option = st.selectbox("Choose an option:", ["Sentence Generation", "Word Generation"])
