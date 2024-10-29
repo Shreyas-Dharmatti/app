@@ -195,7 +195,7 @@ elif option == "Word Generation":
         input_text = " ".join(input_text.split())  # Truncate to the first 5 words
     input_words = input_text.split()[:block_size]
     input_words = [''] * (block_size - len(input_words)) + input_words
-    num_words = st.number_input("Number of Words to Generate", min_value=1, max_value=100000, step=1, value=10)
+    num_words = st.number_input("Number of Words to Generate", min_value=1, max_value=1000, step=1, value=10)
 
     # Map the activation function choice to PyTorch activation functions
     activation_dict = {
